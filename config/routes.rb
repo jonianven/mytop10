@@ -1,5 +1,8 @@
 Mytop10::Application.routes.draw do
   root 'movies#index'
+  resources :movies
+  get '/rankings', to:'movies#rankings'
+  put '/rankings', to:'movies#rankings_update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,16 @@
+<h1 class="text-center">MyTop10</h1>
+<h2 class="text-center">Add New Movie</h2>
+<div class="movie_new">
+  <%= simple_form_for @movie, class: 'form-horizontal' do |form| %>
+    <%= form.input :title, placeholder: 'Pootie Tang' %>
+    <%= form.input :year, as: :select, collection: Movie::YEARS, placeholder: '2001' %>
+    <%= form.input :director, placeholder: 'Louis C.K.' %>
+    <%= form.input :cast, placeholder: 'Chris Rock, J.B. Smoove' %>
+    <%= form.input :description, placeholder: 'Pootie Tang, the musician/actor/folk hero of the ghetto, is chronicled from his early childhood to his battles against the evil Corporate America, who try to steal his magic belt and make him sell out by endorsing addictive products to his people. Pootie must learn to find himself and defeat the evil corporation for all the young black children of America, supatime.', class: 'description_input' %>
+    <br />
+    <%= form.input :rank, as: :select, collection: Movie::RANKS, placeholder: '1' %>
+    <%= form.input :review, placeholder: 'Transcendent! The best movie of all time.', label: 'Short Review' %>
+    <%= form.submit 'Add Movie', class: 'btn btn-primary' %>
+  <% end %>
+  </div>
+</div>

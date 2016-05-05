@@ -1,8 +1,20 @@
-<h1 class="text-center">My Top 10 Movies</h1>
+<h1 class="text-center">MyTop10</h1>
 <div class="moviebox col-xs-10 col-xs-offset-1">
-  <h2 class="text-center">1. There Will Be Blood</h2>
-  <img class="img-responsive col-sm-4 col-sm-offset-4" src="assets/01.jpg" />
+  <%= link_to 'Add New Movie', new_movie_path, class: 'btn btn-primary col-xs-12 col-sm-6 col-sm-offset-3' %>
+  <br /><br /><br />
+  <%= link_to 'Edit Rankings', rankings_path, class: 'btn btn-primary col-xs-12 col-sm-6 col-sm-offset-3 disabled' %> 
   <br class="clear" />
-  <br />
-  <p class="text-center">This is a placeholder. I am under construction and will look a lot better soon! See you in Quiz #2 :D</p>
+  <p class="text-center">*Feature Coming Soon</p>
+<div class="clear" />
+<br />
+<% @movies.each do |movie| %>
+  <h2 class="text-center">#<%= movie.rank %></h2>
+  <h3 class="text-center"><%= movie.title %> (<%= movie.year %>)</h3>
+  <h4 class="text-center">Director: <%= movie.director %></h4>
+  <h4 class="text-center">Starring: <%= movie.cast %></h4>
+  <h4 class="text-center">Description</h4>
+  <p class="text-center"><%= movie.description %></p>
+  <h4 class="text-center">Short Review</h4>
+  <p class="text-center"><%= movie.review %></p>
+<% end %>
 </div>

@@ -1,0 +1,12 @@
+<h1 class="text-center">MyTop10</h1>
+<h2 class="text-center">Add a Movie</h2>
+<div class="movie_new">
+<%= simple_form_for rankings_path, method: :put do |q| %>
+  <% @movies.each do |movie| %>
+    <%= simple_fields_for movie do |form| %>
+      <%= form.input :title, placeholder: 'Pootie Tang' %>
+      <%= form.input :rank, as: :select, collection: Movie::RANKS %>
+    <% end %>
+  <% end %>
+  <%= q.button :submit, 'Edit Rankings' %>
+<% end %>
